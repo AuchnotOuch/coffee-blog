@@ -1,4 +1,4 @@
-import express from "express"
+const express = require("express")
 
 const coffeeRouter = express.Router()
 
@@ -26,4 +26,4 @@ coffeeRouter.get('/', (req, res) => {
     return res.json("Coffee Route")
 })
 
-export { coffeeRouter }
+module.exports = { coffeeRouter }

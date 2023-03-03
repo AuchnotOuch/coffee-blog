@@ -1,4 +1,4 @@
-import express from "express"
+const express = require("express")
 
 const postRouter = express.Router()
 
@@ -25,4 +25,4 @@ postRouter.get("/", (req, res) => {
     return res.json("Post Route")
 })
 
-export { postRouter }
+module.exports = { postRouter }

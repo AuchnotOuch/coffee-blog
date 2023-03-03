@@ -11,11 +11,26 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Post.belongsTo(
+        models.Coffee,
+        {
+          foreignKey: 'id'
+        }
+      )
     }
   }
   Post.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
     title: DataTypes.STRING,
-    coffee: DataTypes.INTEGER,
+    coffee: {
+      type: DataTypes.INTEGER,
+      references: { model: 'Coffees' }
+    },
     text: DataTypes.STRING,
     rating: DataTypes.FLOAT
   }, {

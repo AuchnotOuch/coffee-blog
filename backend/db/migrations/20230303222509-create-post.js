@@ -13,7 +13,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       coffee: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Coffees',
+          key: 'id'
+        }
       },
       text: {
         type: Sequelize.STRING

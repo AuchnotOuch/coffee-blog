@@ -11,13 +11,26 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Coffee.hasMany(
+        models.Post,
+        {
+          foreignKey: 'id'
+        }
+      )
     }
   }
   Coffee.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
     name: DataTypes.STRING,
     year: DataTypes.INTEGER,
     caffeineContent: DataTypes.FLOAT,
-    caffeinePercentage: DataTypes.FLOAT
+    caffeinePercentage: DataTypes.FLOAT,
+
   }, {
     sequelize,
     modelName: 'Coffee',

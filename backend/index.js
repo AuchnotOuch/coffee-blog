@@ -1,7 +1,7 @@
-import express from "express"
-import { coffeeRouter } from "./routes/coffee.js"
-import { postRouter } from "./routes/post.js"
-import dotenv from 'dotenv'
+const express = require("express")
+const { coffeeRouter } = require("./routes/coffee.js")
+const { postRouter } = require("./routes/post.js")
+const dotenv = require('dotenv')
 dotenv.config()
 
 const app = express()
