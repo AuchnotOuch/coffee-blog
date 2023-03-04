@@ -41,7 +41,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete({
+    await queryInterface.bulkDelete('Coffees', {
       name: ['Colombian Supremo', 'Ethiopian Yirgacheffe', 'Costa Rican Tarrazu']
     })
   }
